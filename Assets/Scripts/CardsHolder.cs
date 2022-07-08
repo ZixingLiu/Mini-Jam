@@ -29,6 +29,8 @@ public class CardsHolder : MonoBehaviour
         for(int i = 0; i < cards.Count;i++)
         {
             cards[i].transform.SetParent(Hand.transform);
+            
+            cards[i].GetComponent<Cards>().originTransfrom = cards[i].transform.localPosition;
         }
 
         

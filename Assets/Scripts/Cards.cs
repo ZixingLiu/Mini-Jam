@@ -7,10 +7,16 @@ public class Cards : MonoBehaviour, IPointerDownHandler,IDragHandler,IBeginDragH
 {
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
+    private GameObject CardInSceneHolder;
+    private GameObject Hand;
+
+    public  Vector2 originTransfrom;
 
     public Canvas canvas;
 
     public GameObject cardInSceneHolder;
+
+    public bool canDrag = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +24,9 @@ public class Cards : MonoBehaviour, IPointerDownHandler,IDragHandler,IBeginDragH
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
         canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
+
+        cardInSceneHolder = GameObject.Find("Card in Scene");
+        Hand = GameObject.Find("Hand");
     }
 
     // Update is called once per frame
@@ -35,26 +44,59 @@ public class Cards : MonoBehaviour, IPointerDownHandler,IDragHandler,IBeginDragH
     public void OnPointerDown(PointerEventData eventData)
     {
 
-        Debug.Log("on pointer down");
+        //Debug.Log("on pointer down");
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        Debug.Log("on drag");
+        //Debug.Log("on drag");
+        if(canDrag)
+        {
+            //rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+            transform.SetParent(cardInSceneHolder.transform);
 
-        rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+            transform.position = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
+        }
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        canvasGroup.blocksRaycasts = false;
-        canvasGroup.alpha = 0.6f;
+        if(canDrag)
+        {
+            canvasGroup.blocksRaycasts = false;
+            canvasGroup.alpha = 0.6f;
+        }
+        
 
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        canvasGroup.interactable = true;
+        canvasGroup.blocksRaycasts = true;
         canvasGroup.alpha = 1;
+
+        if(canDrag)
+        {
+            transform.SetParent(Hand.transform);
+
+        }
+    }
+
+    private void OnMouseEnter()
+    {
+        if(canDrag)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y + 1);
+
+        }
+    }
+
+    private void OnMouseExit()
+    {
+        if(canDrag)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y - 1);
+
+        }
     }
 }
