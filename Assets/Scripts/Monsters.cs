@@ -1,9 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Monsters : MonoBehaviour
 {
+    //health
+    public float maxHealth = 100, currentHealth;
+    public Image healthBar;
+    public TextMeshProUGUI healthText;
+    float lerpSpeed;
+
+    //attack
+    public float damage = 5;
+    public TextMeshProUGUI attackText;
 
     public GameObject TargetPlayer;
 
@@ -14,14 +25,57 @@ public class Monsters : MonoBehaviour
     void Start()
     {
         doTweenManager = GetComponent<DoTweenManager>();
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.M))
+        if(Input.GetKeyDown(KeyCode.T))
         {
-            AttackCheck();
+            TakeDamage(15);
+        }
+
+        if(Input.GetKeyDown(KeyCode.H))
+        {
+            Heal(15);
+
+        }
+
+        attackText.text = damage.ToString();
+        healthText.text = currentHealth + "/" + maxHealth;
+
+        lerpSpeed = 3f * Time.deltaTime;
+
+        HealthBarFiller();
+        ColorChanger();
+    }
+
+    void HealthBarFiller()
+    {
+        healthBar.fillAmount = Mathf.Lerp(healthBar.fillAmount, currentHealth / maxHealth, lerpSpeed);
+    }
+
+    void ColorChanger()
+    {
+        Color healthColor = Color.Lerp(Color.red, Color.green, (currentHealth / maxHealth));
+
+        healthBar.color = healthColor;
+    }
+
+    public void TakeDamage(float damage)
+    {
+        if (currentHealth > 0)
+        {
+            currentHealth -= damage;
+        }
+    }
+
+    public void Heal(float healing)
+    {
+        if (currentHealth < maxHealth)
+        {
+            currentHealth += healing;
         }
     }
 

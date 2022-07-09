@@ -2,11 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
+using TMPro;
 
 public class Cards : MonoBehaviour, IPointerDownHandler,IDragHandler,IBeginDragHandler,IEndDragHandler
 {
-    public float maxHealth;
-    public float currentHealth;
+    //health
+    public float maxHealth = 100, currentHealth;
+    public Image healthBar;
+    public TextMeshProUGUI healthText;
+    float lerpSpeed;
+
+    //attack
+    public float damage = 5;
+    public TextMeshProUGUI attackText;
 
     private CanvasGroup canvasGroup;
     private GameObject CardInSceneHolder;
@@ -36,6 +45,8 @@ public class Cards : MonoBehaviour, IPointerDownHandler,IDragHandler,IBeginDragH
 
         cardInSceneHolder = GameObject.Find("Card in Scene");
         Hand = GameObject.Find("Hand");
+
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
@@ -45,7 +56,53 @@ public class Cards : MonoBehaviour, IPointerDownHandler,IDragHandler,IBeginDragH
         {
             AttackCheck();
         }
+
+        if(currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+        if (currentHealth < 0)
+        {
+            currentHealth = 0;
+        }
+        attackText.text = damage.ToString();
+        healthText.text = currentHealth + "/" + maxHealth;
+
+        lerpSpeed = 3f * Time.deltaTime;
+
+        HealthBarFiller();
+        ColorChanger();
     }
+
+     void HealthBarFiller()
+    {
+        healthBar.fillAmount = Mathf.Lerp(healthBar.fillAmount, currentHealth / maxHealth,lerpSpeed);
+    }
+
+    void ColorChanger()
+    {
+        Color healthColor = Color.Lerp(Color.red, Color.green, (currentHealth / maxHealth));
+
+        healthBar.color = healthColor;
+    }
+
+    public void TakeDamage(float damage)
+    {
+        if(currentHealth > 0)
+        {
+            currentHealth -= damage;
+        }
+    }
+
+    public void Heal(float healing)
+    {
+        if(currentHealth <maxHealth)
+        {
+            currentHealth += healing;
+        }
+    }
+
+
 
     public void AttackCheck()
     {
