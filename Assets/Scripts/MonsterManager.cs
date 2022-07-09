@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MonsterManager : MonoBehaviour
 {
+    private CombatManager combatManager;
 
     public List<GameObject> Monster = new List<GameObject>();
 
@@ -11,7 +12,8 @@ public class MonsterManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        MonsterHolder = GameObject.Find("Monster Holder");
+        MonsterHolder = GameObject.Find("Monster Slot Holder");
+        combatManager = FindObjectOfType<CombatManager>();
 
         PutMonsterInSlot();
     }
@@ -26,9 +28,20 @@ public class MonsterManager : MonoBehaviour
     {
         for (int i = 0; i < Monster.Count; i++)
         {
-            Monster[i].transform.SetParent(MonsterHolder.transform);
+            if(i< MonsterHolder.transform.childCount)
+            {
+                Monster[i].transform.SetParent(MonsterHolder.transform.GetChild(i));
 
-           
+                Monster[i].transform.position = MonsterHolder.transform.GetChild(i).position;
+
+                Monster[i].transform.localScale = Vector3.one;
+
+                combatManager.monsters.Add(Monster[i].GetComponent<Monsters>());
+
+            }
+
+
+
         }
     }
 }

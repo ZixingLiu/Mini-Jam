@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class Cards : MonoBehaviour, IPointerDownHandler,IDragHandler,IBeginDragHandler,IEndDragHandler
 {
-    private RectTransform rectTransform;
+
     private CanvasGroup canvasGroup;
     private GameObject CardInSceneHolder;
     private GameObject Hand;
@@ -25,7 +25,7 @@ public class Cards : MonoBehaviour, IPointerDownHandler,IDragHandler,IBeginDragH
     void Start()
     {
         cardInSceneHolder = GameObject.Find("Card in Scene");
-        rectTransform = GetComponent<RectTransform>();
+        
         canvasGroup = GetComponent<CanvasGroup>();
         canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
 
@@ -51,7 +51,7 @@ public class Cards : MonoBehaviour, IPointerDownHandler,IDragHandler,IBeginDragH
 
         if (hit.collider != null)
         {
-            Debug.Log(hit.collider.tag);
+            //Debug.Log(hit.collider.tag);
             if (hit.collider.tag == "Monster")
             {
                 TargetMonster = hit.collider.gameObject;

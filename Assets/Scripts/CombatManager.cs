@@ -7,7 +7,11 @@ public class CombatManager : MonoBehaviour
 {
     public Button attackButton;
 
-    
+    public List<Cards> cards = new List<Cards>();
+
+    public List<Monsters> monsters = new List<Monsters>();
+
+    public float Time;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +30,29 @@ public class CombatManager : MonoBehaviour
         //discable button
         attackButton.interactable = false;
 
-        
+        GameObject player = GameObject.Find("Player Slot Holder");
+
+        for(int i=0;i<player.transform.childCount;i++)
+        {
+            cards.Add( player.transform.GetChild(i).GetChild(0).GetComponent<Cards>());
+        }
+
+        StartCoroutine(Attack());
+
     }
+
+    public IEnumerator Attack()
+    {
+        for(int i =0;i<cards.Count;i++)
+        {
+            //move attack
+           
+            yield return new WaitForSeconds(Time);
+
+        }
+
+    }
+
+    
 
 }

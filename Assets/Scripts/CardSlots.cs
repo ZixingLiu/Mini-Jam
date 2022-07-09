@@ -8,9 +8,11 @@ public class CardSlots : MonoBehaviour, IDropHandler
     private RectTransform myrRectTransform;
 
     public bool canPut = true;
+
+    private CombatManager combatManager;
     public void OnDrop(PointerEventData eventData)
     {
-        Debug.Log("on drop");
+        //Debug.Log("on drop");
 
         if(canPut)
         {
@@ -21,6 +23,8 @@ public class CardSlots : MonoBehaviour, IDropHandler
                 eventData.pointerDrag.GetComponent<Cards>().canDrag = false;
 
                 eventData.pointerDrag.GetComponent<BoxCollider2D>().enabled = false;
+
+                //combatManager.cards.Add(eventData.pointerDrag.GetComponent<Cards>());
                 canPut = false;
             }
         }
@@ -31,12 +35,17 @@ public class CardSlots : MonoBehaviour, IDropHandler
     void Start()
     {
         myrRectTransform = GetComponent<RectTransform>();
+
+        combatManager = FindObjectOfType<CombatManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(transform.childCount <=0)
+        {
+            canPut = true;
+        }
     }
 
     
