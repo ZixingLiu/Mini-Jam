@@ -21,6 +21,10 @@ public class StartMenu : MonoBehaviour
     {
         SceneManager.LoadScene(LoadSceneName); 
     }
+    public void StartLevelOne()
+    {
+        SceneManager.LoadScene(LoadSceneName);
+    }
     public void QuitGame()
     {
         Debug.Log("Game Quit. "); 
