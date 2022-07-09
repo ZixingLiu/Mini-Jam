@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CardsHolder : MonoBehaviour
+public class CardsManager: MonoBehaviour
 {
 
     public List<GameObject> cards = new List<GameObject>();
