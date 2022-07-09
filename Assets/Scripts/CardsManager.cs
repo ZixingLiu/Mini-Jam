@@ -9,12 +9,18 @@ public class CardsManager: MonoBehaviour
 
     public GameObject Hand;
 
+    public bool canPlace = true;
+
     private void Awake()
     {
         int numCardManeger = FindObjectsOfType<CardsManager>().Length;
+
+
         if (numCardManeger != 1)
         {
             Destroy(this.gameObject);
+            Debug.Log("destroy me");
+            return;
         }
         // if more then one music player is in the scene
         //destroy ourselves
@@ -22,21 +28,30 @@ public class CardsManager: MonoBehaviour
         {
             DontDestroyOnLoad(this.gameObject);
         }
+
+        Hand = GameObject.Find("Hand");
+
+        canPlace = true;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        Hand = GameObject.Find("Hand");
-
-        PutCardInHand();
         
+
+
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(canPlace)
+        {
+            Debug.Log("put card in hand");
+            PutCardInHand();
+            canPlace = false;
+        }
     }
 
     public void PutCardInHand()
@@ -44,13 +59,14 @@ public class CardsManager: MonoBehaviour
 
         for(int i = 0; i < cards.Count;i++)
         {
-            cards[i].transform.SetParent(Hand.transform);
-            cards[i].transform.localScale = Vector3.one;
-            
-            cards[i].GetComponent<Cards>().originTransfrom = cards[i].transform.localPosition;
-        }
+            if(Hand != null)
+            {
+                cards[i].transform.SetParent(Hand.transform);
+                cards[i].transform.localScale = Vector3.one;
 
-        
+                cards[i].GetComponent<Cards>().originTransfrom = cards[i].transform.localPosition;
+            }   
+        } 
     }
 
 }

@@ -35,9 +35,7 @@ public class CombatManager : MonoBehaviour
     {
         if(monsters.Count <= 0)
         {
-            Debug.Log("win fight");
-
-            
+           // Debug.Log("win fight");
 
             StartCoroutine(OpenReward());
         }
@@ -61,7 +59,8 @@ public class CombatManager : MonoBehaviour
 
         foreach (Cards cardObject in cards)
         {
-            cardObject.gameObject.transform.SetParent(this.transform);
+            //Debug.Log("move card back");
+            cardObject.gameObject.transform.SetParent(cardsManager.transform);
         }
     }
 
