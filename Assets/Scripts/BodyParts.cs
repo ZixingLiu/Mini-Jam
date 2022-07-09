@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using TMPro;
 
 
 public class BodyParts : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
+
+   
+
 
     public enum BodyType { arm, leg, head}
     public BodyType currentType;
@@ -14,7 +18,17 @@ public class BodyParts : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
     GameObject cardInSceneHolder;
     CanvasGroup canvasGroup;
 
+    public Cards currentCard;
+
     public bool moveBack = true;
+
+    [Header("data")]
+    public float healthChange;
+    public float damageChange;
+
+    [Header("Text")]
+    public TextMeshProUGUI damageText;
+    public TextMeshProUGUI healthText;
 
     // Start is called before the first frame update
     void Start()
@@ -23,19 +37,21 @@ public class BodyParts : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
         canvasGroup = GetComponent<CanvasGroup>();
 
         currentHolder = transform.parent.gameObject;
+
+        currentCard = transform.GetComponentInParent<Cards>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(currentType == BodyType.arm)
-        {
+        damageText.text = damageChange.ToString();
+        healthText.text = healthChange.ToString();
 
-        }
+
     }
 
     
-
+    
     
 
     public void OnBeginDrag(PointerEventData eventData)
