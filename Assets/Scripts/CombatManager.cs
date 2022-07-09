@@ -15,9 +15,13 @@ public class CombatManager : MonoBehaviour
 
     CardsManager cardsManager;
 
+    GameObject[] allCards;
+    GameObject[] allBodyPart;
+
     // Start is called before the first frame update
     void Start()
     {
+        
         attackButton = GameObject.Find("Attack Button").GetComponent<Button>();
         cardsManager = FindObjectOfType<CardsManager>();
     }
@@ -34,6 +38,9 @@ public class CombatManager : MonoBehaviour
         {
             Debug.Log("Player fail");
         }
+
+        allCards = GameObject.FindGameObjectsWithTag("Card");
+        allBodyPart = GameObject.FindGameObjectsWithTag("BodyPart");
     }
 
     public void ClickAttack()
@@ -43,16 +50,15 @@ public class CombatManager : MonoBehaviour
 
         GameObject player = GameObject.Find("Player Slot Holder");
 
-        //for(int i=0;i<player.transform.childCount;i++)
-        //{
+        foreach(GameObject card in allCards)
+        {
+            card.GetComponent<Cards>().canInteract = false;
+        }
 
-        //    if(player.transform.GetChild(i).childCount >0)
-        //    {
-        //        cards.Add(player.transform.GetChild(i).GetChild(0).GetComponent<Cards>());
-
-        //    }
-
-        //}
+        foreach(GameObject bodypart in allBodyPart)
+        {
+            bodypart.GetComponent<BodyParts>().canInteract = false;
+        }
 
         StartCoroutine(Attack());
 
@@ -80,6 +86,17 @@ public class CombatManager : MonoBehaviour
         }
 
         attackButton.interactable = true;
+
+        foreach (GameObject card in allCards)
+        {
+            card.GetComponent<Cards>().canInteract = true;
+        }
+
+        foreach (GameObject bodypart in allBodyPart)
+        {
+            bodypart.GetComponent<BodyParts>().canInteract = true;
+        }
+
         StopCoroutine(Attack());
 
     }

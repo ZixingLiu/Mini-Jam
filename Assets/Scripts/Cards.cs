@@ -35,6 +35,8 @@ public class Cards : MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragHandle
     CombatManager combatManager;
     CardsManager cardsManager;
 
+    public bool canInteract = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -142,6 +144,17 @@ public class Cards : MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragHandle
             }
 
         }
+        else
+        {
+            if (combatManager.monsters.Count > 0)
+            {
+                TargetMonster = combatManager.monsters[Random.Range(0, combatManager.monsters.Count)].gameObject;
+                TargetMonster.GetComponent<Monsters>().TakeDamage(damage);
+
+                PlayAttackAnimation();
+            }
+
+        }
     }
 
 
@@ -157,7 +170,7 @@ public class Cards : MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragHandle
     public void OnDrag(PointerEventData eventData)
     {
         //Debug.Log("on drag");
-        if(canDrag)
+        if(canDrag && canInteract)
         {
             //rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
             transform.SetParent(cardInSceneHolder.transform);
@@ -168,7 +181,7 @@ public class Cards : MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragHandle
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        if(canDrag)
+        if(canDrag && canInteract)
         {
             canvasGroup.blocksRaycasts = false;
             canvasGroup.alpha = 0.6f;
@@ -183,20 +196,24 @@ public class Cards : MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragHandle
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        canvasGroup.blocksRaycasts = true;
-        canvasGroup.alpha = 1;
-
-        if(canDrag)
+        if(canInteract)
         {
-            transform.SetParent(Hand.transform);
+            canvasGroup.blocksRaycasts = true;
+            canvasGroup.alpha = 1;
 
-            endDrag = true;
+            if (canDrag)
+            {
+                transform.SetParent(Hand.transform);
+
+                endDrag = true;
+            }
         }
+        
     }
 
     private void OnMouseEnter()
     {
-        if(canDrag)
+        if(canDrag && canInteract)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y + 0.3f);
             endDrag = false;
@@ -206,7 +223,7 @@ public class Cards : MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragHandle
 
     private void OnMouseExit()
     {
-        if(canDrag && !endDrag)
+        if(canDrag && !endDrag && canInteract)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y - 0.3f);
 

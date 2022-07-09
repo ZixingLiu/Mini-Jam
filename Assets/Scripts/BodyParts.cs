@@ -8,8 +8,8 @@ using TMPro;
 public class BodyParts : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
 
-   
 
+    public bool canInteract = true;
 
     public enum BodyType { arm, leg, head}
     public BodyType currentType;
@@ -56,29 +56,41 @@ public class BodyParts : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        canvasGroup.blocksRaycasts = false;
-        canvasGroup.alpha = 0.6f;
+        if(canInteract)
+        {
+            canvasGroup.blocksRaycasts = false;
+            canvasGroup.alpha = 0.6f;
 
-        moveBack = true;
+            moveBack = true;
+        }
+ 
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        //rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
-        transform.SetParent(cardInSceneHolder.transform);
+        if (canInteract)
+        {
+            //rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+            transform.SetParent(cardInSceneHolder.transform);
 
-        transform.position = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
+            transform.position = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
+        }
+            
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        canvasGroup.blocksRaycasts = true;
-        canvasGroup.alpha = 1;
-
-        if (moveBack)
+        if (canInteract)
         {
-            transform.SetParent(currentHolder.transform);
+            canvasGroup.blocksRaycasts = true;
+            canvasGroup.alpha = 1;
 
+            if (moveBack)
+            {
+                transform.SetParent(currentHolder.transform);
+
+            }
         }
+            
     }
 }

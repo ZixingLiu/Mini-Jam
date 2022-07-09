@@ -421,7 +421,7 @@ GameObject:
   - component: {fileID: 7973397879889390912}
   m_Layer: 5
   m_Name: arm
-  m_TagString: Untagged
+  m_TagString: BodyPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -497,6 +497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7c403dc1a6826e43bc796ef197f293a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canInteract: 1
   currentType: 0
   currentHolder: {fileID: 0}
   currentCard: {fileID: 0}
@@ -783,6 +784,7 @@ MonoBehaviour:
   cardInSceneHolder: {fileID: 0}
   canDrag: 1
   TargetMonster: {fileID: 0}
+  canInteract: 1
 --- !u!114 &2670412226190386696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1705,7 +1707,7 @@ GameObject:
   - component: {fileID: 7062425008945392507}
   m_Layer: 5
   m_Name: head
-  m_TagString: Untagged
+  m_TagString: BodyPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1781,6 +1783,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7c403dc1a6826e43bc796ef197f293a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canInteract: 1
   currentType: 2
   currentHolder: {fileID: 0}
   currentCard: {fileID: 0}
@@ -2086,7 +2089,7 @@ GameObject:
   - component: {fileID: 4679086667407119160}
   m_Layer: 5
   m_Name: leg
-  m_TagString: Untagged
+  m_TagString: BodyPart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2162,6 +2165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7c403dc1a6826e43bc796ef197f293a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canInteract: 1
   currentType: 1
   currentHolder: {fileID: 0}
   currentCard: {fileID: 0}

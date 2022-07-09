@@ -113,6 +113,17 @@ public class Monsters : MonoBehaviour
             }
 
         }
+        else
+        {
+            if(combatManager.cards.Count>0)
+            {
+                TargetPlayer = combatManager.cards[Random.Range(0, combatManager.cards.Count)].gameObject;
+                TargetPlayer.GetComponent<Cards>().TakeDamage(damage);
+
+                PlayAttackAnimation();
+            }
+           
+        }
     }
 
     public void PlayAttackAnimation()
