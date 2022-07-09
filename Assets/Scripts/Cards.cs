@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
 
-public class Cards : MonoBehaviour, IPointerDownHandler,IDragHandler,IBeginDragHandler,IEndDragHandler
+public class Cards : MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragHandler
 {
     [Header("health")]
     public float maxHealth = 100, currentHealth;
@@ -44,7 +44,6 @@ public class Cards : MonoBehaviour, IPointerDownHandler,IDragHandler,IBeginDragH
         canvasGroup = GetComponent<CanvasGroup>();
         canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
 
-        cardInSceneHolder = GameObject.Find("Card in Scene");
         Hand = GameObject.Find("Hand");
         combatManager = FindObjectOfType<CombatManager>();
         cardsManager = FindObjectOfType<CardsManager>();
@@ -141,11 +140,7 @@ public class Cards : MonoBehaviour, IPointerDownHandler,IDragHandler,IBeginDragH
     }
 
 
-    public void OnPointerDown(PointerEventData eventData)
-    {
-
-        //Debug.Log("on pointer down");
-    }
+    
 
     public void OnDrag(PointerEventData eventData)
     {
@@ -191,7 +186,7 @@ public class Cards : MonoBehaviour, IPointerDownHandler,IDragHandler,IBeginDragH
     {
         if(canDrag)
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y + 1);
+            transform.position = new Vector3(transform.position.x, transform.position.y + 0.3f);
             endDrag = false;
 
         }
@@ -201,7 +196,7 @@ public class Cards : MonoBehaviour, IPointerDownHandler,IDragHandler,IBeginDragH
     {
         if(canDrag && !endDrag)
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y - 1);
+            transform.position = new Vector3(transform.position.x, transform.position.y - 0.3f);
 
         }
     }

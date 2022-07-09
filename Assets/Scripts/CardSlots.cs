@@ -16,16 +16,20 @@ public class CardSlots : MonoBehaviour, IDropHandler
 
         if(canPut)
         {
-            if (eventData.pointerDrag != null && eventData.pointerDrag.GetComponent<Cards>().canDrag)
+            if (eventData.pointerDrag != null && eventData.pointerDrag.GetComponent<Cards>() != null)
             {
-                eventData.pointerDrag.transform.SetParent(this.transform);
-                eventData.pointerDrag.transform.position = transform.position;
-                eventData.pointerDrag.GetComponent<Cards>().canDrag = false;
+                if(eventData.pointerDrag.GetComponent<Cards>().canDrag)
+                {
+                    eventData.pointerDrag.transform.SetParent(this.transform);
+                    eventData.pointerDrag.transform.position = transform.position;
+                    eventData.pointerDrag.GetComponent<Cards>().canDrag = false;
 
-                //eventData.pointerDrag.GetComponent<BoxCollider2D>().enabled = false;
+                    //eventData.pointerDrag.GetComponent<BoxCollider2D>().enabled = false;
 
-                combatManager.cards.Add(eventData.pointerDrag.GetComponent<Cards>());
-                canPut = false;
+                    combatManager.cards.Add(eventData.pointerDrag.GetComponent<Cards>());
+                    canPut = false;
+                }
+                
             }
         }
         
