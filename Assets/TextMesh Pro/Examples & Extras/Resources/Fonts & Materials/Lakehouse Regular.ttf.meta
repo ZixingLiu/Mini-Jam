@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 5d1ec5fe4f148444c9d5330686ec9b56
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Lakehouse
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 5960840d13059bc4aa66840346a7aaeb, type: 3}
+  - {fileID: 12800000, guid: a877dc26b64e127438567b857fa6a572, type: 3}
+  - {fileID: 12800000, guid: fb31dd79d2951384b927281b6fab8eaf, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
