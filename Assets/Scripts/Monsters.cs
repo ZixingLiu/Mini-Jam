@@ -42,6 +42,16 @@ public class Monsters : MonoBehaviour
 
         }
 
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+
+        if(currentHealth <0)
+        {
+            currentHealth=0;
+        }
+
         attackText.text = damage.ToString();
         healthText.text = currentHealth + "/" + maxHealth;
 
@@ -92,6 +102,8 @@ public class Monsters : MonoBehaviour
             if (hit.collider.tag == "Card")
             {
                 TargetPlayer = hit.collider.gameObject;
+                TargetPlayer.GetComponent<Cards>().TakeDamage(damage);
+
                 PlayAttackAnimation();
             }
 

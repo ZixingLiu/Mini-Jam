@@ -29,6 +29,7 @@ public class CardsManager: MonoBehaviour
         for(int i = 0; i < cards.Count;i++)
         {
             cards[i].transform.SetParent(Hand.transform);
+            cards[i].transform.localScale = Vector3.one;
             
             cards[i].GetComponent<Cards>().originTransfrom = cards[i].transform.localPosition;
         }

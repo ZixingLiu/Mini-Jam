@@ -118,6 +118,8 @@ public class Cards : MonoBehaviour, IPointerDownHandler,IDragHandler,IBeginDragH
             if (hit.collider.tag == "Monster")
             {
                 TargetMonster = hit.collider.gameObject;
+                TargetMonster.GetComponent<Monsters>().TakeDamage(damage);
+
                 PlayAttackAnimation();
             }
 
