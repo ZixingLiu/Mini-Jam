@@ -32,10 +32,16 @@ public class CombatManager : MonoBehaviour
 
         GameObject player = GameObject.Find("Player Slot Holder");
 
-        for(int i=0;i<player.transform.childCount;i++)
-        {
-            cards.Add( player.transform.GetChild(i).GetChild(0).GetComponent<Cards>());
-        }
+        //for(int i=0;i<player.transform.childCount;i++)
+        //{
+
+        //    if(player.transform.GetChild(i).childCount >0)
+        //    {
+        //        cards.Add(player.transform.GetChild(i).GetChild(0).GetComponent<Cards>());
+
+        //    }
+
+        //}
 
         StartCoroutine(Attack());
 
@@ -45,11 +51,23 @@ public class CombatManager : MonoBehaviour
     {
         for(int i =0;i<cards.Count;i++)
         {
-            //move attack
-           
+
+            cards[i].AttackCheck();
+
             yield return new WaitForSeconds(Time);
 
+
         }
+
+        for(int j=0;j<monsters.Count;j++)
+        {
+            monsters[j].AttackCheck();
+
+            yield return new WaitForSeconds(Time);
+        }
+
+        attackButton.interactable = true;
+        StopCoroutine(Attack());
 
     }
 

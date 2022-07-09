@@ -22,9 +22,9 @@ public class CardSlots : MonoBehaviour, IDropHandler
                 eventData.pointerDrag.transform.position = transform.position;
                 eventData.pointerDrag.GetComponent<Cards>().canDrag = false;
 
-                eventData.pointerDrag.GetComponent<BoxCollider2D>().enabled = false;
+                //eventData.pointerDrag.GetComponent<BoxCollider2D>().enabled = false;
 
-                //combatManager.cards.Add(eventData.pointerDrag.GetComponent<Cards>());
+                combatManager.cards.Add(eventData.pointerDrag.GetComponent<Cards>());
                 canPut = false;
             }
         }
