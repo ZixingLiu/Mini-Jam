@@ -9,12 +9,28 @@ public class CardsManager: MonoBehaviour
 
     public GameObject Hand;
 
+    private void Awake()
+    {
+        int numCardManeger = FindObjectsOfType<CardsManager>().Length;
+        if (numCardManeger != 1)
+        {
+            Destroy(this.gameObject);
+        }
+        // if more then one music player is in the scene
+        //destroy ourselves
+        else
+        {
+            DontDestroyOnLoad(this.gameObject);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         Hand = GameObject.Find("Hand");
 
         PutCardInHand();
+        
     }
 
     // Update is called once per frame

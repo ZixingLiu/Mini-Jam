@@ -14,9 +14,12 @@ public class CombatManager : MonoBehaviour
     public float Time;
 
     CardsManager cardsManager;
+    StartMenu changescene;
 
     GameObject[] allCards;
     GameObject[] allBodyPart;
+
+    public GameObject rewardCanvas;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +27,7 @@ public class CombatManager : MonoBehaviour
         
         attackButton = GameObject.Find("Attack Button").GetComponent<Button>();
         cardsManager = FindObjectOfType<CardsManager>();
+        changescene = GetComponent<StartMenu>();
     }
 
     // Update is called once per frame
@@ -32,15 +36,39 @@ public class CombatManager : MonoBehaviour
         if(monsters.Count <= 0)
         {
             Debug.Log("win fight");
+
+            
+
+            StartCoroutine(OpenReward());
         }
 
-        if(cardsManager.cards.Count <= 0)
+        if (cardsManager.cards.Count <= 0)
         {
-            Debug.Log("Player fail");
+
+            StartCoroutine(FailScene());
         }
 
         allCards = GameObject.FindGameObjectsWithTag("Card");
         allBodyPart = GameObject.FindGameObjectsWithTag("BodyPart");
+    }
+
+
+
+    IEnumerator OpenReward()
+    {
+        yield return new WaitForSeconds(2);
+        rewardCanvas.SetActive(true);
+
+        foreach (Cards cardObject in cards)
+        {
+            cardObject.gameObject.transform.SetParent(this.transform);
+        }
+    }
+
+    IEnumerator FailScene()
+    {
+        yield return new WaitForSeconds(2);
+        changescene.StartGame();
     }
 
     public void ClickAttack()
