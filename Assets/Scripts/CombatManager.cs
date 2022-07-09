@@ -13,16 +13,27 @@ public class CombatManager : MonoBehaviour
 
     public float Time;
 
+    CardsManager cardsManager;
+
     // Start is called before the first frame update
     void Start()
     {
         attackButton = GameObject.Find("Attack Button").GetComponent<Button>();
+        cardsManager = FindObjectOfType<CardsManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(monsters.Count <= 0)
+        {
+            Debug.Log("win fight");
+        }
+
+        if(cardsManager.cards.Count <= 0)
+        {
+            Debug.Log("Player fail");
+        }
     }
 
     public void ClickAttack()
@@ -59,7 +70,9 @@ public class CombatManager : MonoBehaviour
 
         }
 
-        for(int j=0;j<monsters.Count;j++)
+        yield return new WaitForSeconds(0.5f);
+
+        for (int j=0;j<monsters.Count;j++)
         {
             monsters[j].AttackCheck();
 

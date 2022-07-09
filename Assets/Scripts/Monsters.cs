@@ -18,13 +18,15 @@ public class Monsters : MonoBehaviour
 
     public GameObject TargetPlayer;
 
-    private DoTweenManager doTweenManager;
-
+    DoTweenManager doTweenManager;
+    CombatManager combatManager;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         doTweenManager = GetComponent<DoTweenManager>();
+        combatManager = FindObjectOfType<CombatManager>();
         currentHealth = maxHealth;
     }
 
@@ -47,9 +49,12 @@ public class Monsters : MonoBehaviour
             currentHealth = maxHealth;
         }
 
-        if(currentHealth <0)
+        if(currentHealth <=0)
         {
             currentHealth=0;
+
+            combatManager.monsters.Remove(this);
+            Destroy(gameObject,1);
         }
 
         attackText.text = damage.ToString();

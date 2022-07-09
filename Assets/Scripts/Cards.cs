@@ -7,20 +7,19 @@ using TMPro;
 
 public class Cards : MonoBehaviour, IPointerDownHandler,IDragHandler,IBeginDragHandler,IEndDragHandler
 {
-    //health
+    [Header("health")]
     public float maxHealth = 100, currentHealth;
     public Image healthBar;
     public TextMeshProUGUI healthText;
     float lerpSpeed;
 
-    //attack
+    [Header("attack")]
     public float damage = 5;
     public TextMeshProUGUI attackText;
 
-    private CanvasGroup canvasGroup;
-    private GameObject CardInSceneHolder;
-    private GameObject Hand;
-    private DoTweenManager doTweenManager;
+     CanvasGroup canvasGroup;
+     GameObject Hand;
+     DoTweenManager doTweenManager;
 
     public  Vector2 originTransfrom;
 
@@ -32,7 +31,9 @@ public class Cards : MonoBehaviour, IPointerDownHandler,IDragHandler,IBeginDragH
 
     public GameObject TargetMonster;
 
-    private bool endDrag = false;
+     bool endDrag = false;
+    CombatManager combatManager;
+    CardsManager cardsManager;
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +46,8 @@ public class Cards : MonoBehaviour, IPointerDownHandler,IDragHandler,IBeginDragH
 
         cardInSceneHolder = GameObject.Find("Card in Scene");
         Hand = GameObject.Find("Hand");
+        combatManager = FindObjectOfType<CombatManager>();
+        cardsManager = FindObjectOfType<CardsManager>();
 
         currentHealth = maxHealth;
     }
@@ -61,9 +64,13 @@ public class Cards : MonoBehaviour, IPointerDownHandler,IDragHandler,IBeginDragH
         {
             currentHealth = maxHealth;
         }
-        if (currentHealth < 0)
+        if (currentHealth <= 0)
         {
             currentHealth = 0;
+
+            combatManager.cards.Remove(this);
+            cardsManager.cards.Remove(this);
+            Destroy(gameObject, 1);
         }
         attackText.text = damage.ToString();
         healthText.text = currentHealth + "/" + maxHealth;

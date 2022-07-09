@@ -5,7 +5,7 @@ using UnityEngine;
 public class CardsManager: MonoBehaviour
 {
 
-    public List<GameObject> cards = new List<GameObject>();
+    public List<Cards> cards = new List<Cards>();
 
     public GameObject Hand;
 
