@@ -11,44 +11,74 @@ public class CardsManager: MonoBehaviour
 
     public bool canPlace = true;
 
+    public int index;
+
     private void Awake()
     {
-        int numCardManeger = FindObjectsOfType<CardsManager>().Length;
+        
+        canPlace = true;
+        Hand = GameObject.Find("Hand");
 
+        GameObject otherDeck = FindObjectOfType<CardsManager>().gameObject;
 
-        if (numCardManeger != 1)
+        if(otherDeck != this.gameObject)
         {
-            Destroy(this.gameObject);
-            Debug.Log("destroy me");
-            return;
+            if(index > otherDeck.GetComponent<CardsManager>().index)
+            {
+                Destroy(otherDeck);
+                DontDestroyOnLoad(this.gameObject);
+                index++;
+                canPlace = true;
+            }
+            else
+            {
+                Destroy(this.gameObject);
+            }
         }
-        // if more then one music player is in the scene
-        //destroy ourselves
         else
         {
             DontDestroyOnLoad(this.gameObject);
+            index++;
+            canPlace = true;
         }
 
-        Hand = GameObject.Find("Hand");
+        //int numCardManeger = FindObjectsOfType<CardsManager>().Length;
 
-        canPlace = true;
+        //if (numCardManeger != 1)
+        //{
+        //    Destroy(this.gameObject);
+        //    Debug.Log("destroy me");
+            
+        //}
+        //// if more then one music player is in the scene
+        ////destroy ourselves
+        //else
+        //{
+        //    DontDestroyOnLoad(this.gameObject);
+        //}
+
+        
+
+        
     }
+
+
 
     // Start is called before the first frame update
     void Start()
     {
+
         
 
-
-       
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(canPlace)
+        if (canPlace)
         {
             Debug.Log("put card in hand");
+            Hand = GameObject.Find("Hand");
             PutCardInHand();
             canPlace = false;
         }

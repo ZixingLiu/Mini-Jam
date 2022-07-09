@@ -37,6 +37,12 @@ public class Cards : MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragHandle
 
     public bool canInteract = true;
 
+    private void Awake()
+    {
+        cardsManager = FindObjectOfType<CardsManager>();
+        cardsManager.canPlace = true;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,7 +54,7 @@ public class Cards : MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragHandle
 
         Hand = GameObject.Find("Hand");
         combatManager = FindObjectOfType<CombatManager>();
-        cardsManager = FindObjectOfType<CardsManager>();
+        
 
         currentHealth = maxHealth;
     }

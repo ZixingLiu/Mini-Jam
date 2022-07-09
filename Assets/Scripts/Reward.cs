@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Reward : MonoBehaviour
 {
-    CardsManager cardsManager;
+    public CardsManager cardsManager;
 
     public GameObject newCard;
     StartMenu startMenu;
@@ -24,7 +24,7 @@ public class Reward : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        cardsManager = FindObjectOfType<CardsManager>();
     }
 
     public void AddDamage()
@@ -42,12 +42,19 @@ public class Reward : MonoBehaviour
     {
         if(newCard != null)
         {
+            
             Debug.Log("get new card");
             newCard.SetActive(true);
-            newCard.transform.SetParent(cardsManager.transform);
+            newCard.transform.SetParent(cardsManager.gameObject.transform);
             cardsManager.cards.Add(newCard.GetComponent<Cards>());
 
-            startMenu.StartGame();
+            StartCoroutine(changeMapScene());
         }
+    }
+
+    IEnumerator changeMapScene()
+    {
+        yield return new WaitForSeconds(1.5f);
+        startMenu.StartGame();
     }
 }

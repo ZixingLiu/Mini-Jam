@@ -54,7 +54,7 @@ public class CombatManager : MonoBehaviour
 
     IEnumerator OpenReward()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1.5f);
         rewardCanvas.SetActive(true);
 
         foreach (Cards cardObject in cards)
@@ -66,7 +66,7 @@ public class CombatManager : MonoBehaviour
 
     IEnumerator FailScene()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1.5f);
         changescene.StartGame();
     }
 
