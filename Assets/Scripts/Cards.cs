@@ -17,6 +17,10 @@ public class Cards : MonoBehaviour, IPointerDownHandler,IDragHandler,IBeginDragH
     public GameObject cardInSceneHolder;
 
     public bool canDrag = true;
+
+    public GameObject TargetMonster;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,12 +36,34 @@ public class Cards : MonoBehaviour, IPointerDownHandler,IDragHandler,IBeginDragH
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.A))
+        {
+            AttackCheck();
+        }
     }
 
-    public void Attack()
+    public void AttackCheck()
     {
 
+        Vector2 shootPos = transform.position + Vector3.up * 3;
+        RaycastHit2D hit = Physics2D.Raycast(shootPos, Vector2.up, 5);
+        Debug.DrawRay(shootPos,Vector2.up, Color.blue, 5);
+
+        if (hit.collider != null)
+        {
+            Debug.Log(hit.collider.tag);
+            if (hit.collider.tag == "Monster")
+            {
+                TargetMonster = hit.collider.gameObject;
+                StartAttack();
+            }
+
+        }
+    }
+
+    public void StartAttack()
+    {
+        Debug.Log("attack");
     }
 
 

@@ -40,4 +40,5 @@ public class CardSlots : MonoBehaviour, IDropHandler
     }
 
     
+
 }
