@@ -46,6 +46,26 @@ public class PlayerQTE : MonoBehaviour
             monsterManager.PutMonsterInSlot();
 
         }
+
+        if(Input.GetKeyDown(KeyCode.S))
+        {
+            finishGame = true;
+            miniGameCanvas.SetActive(false);
+            monsterManager.PutMonsterInSlot();
+        }
+
+        if(Input.GetKeyDown(KeyCode.F))
+        {
+            miniGameCanvas.SetActive(false);
+            //monster
+
+            finishGame = true;
+
+            AddedMonsterCard.transform.SetParent(monsterManager.transform);
+            AddedMonsterCard.SetActive(true);
+            monsterManager.Monster.Add(AddedMonsterCard);
+            monsterManager.PutMonsterInSlot();
+        }
     }
 
     public void ClickHit()
