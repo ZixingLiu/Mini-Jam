@@ -5729,7 +5729,6 @@ MonoBehaviour:
   damage: 35
   attackText: {fileID: 3532847673454524470}
   originTransfrom: {x: 0, y: 0}
-  canvas: {fileID: 0}
   cardInSceneHolder: {fileID: 0}
   canDrag: 1
   TargetMonster: {fileID: 0}
