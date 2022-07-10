@@ -28,38 +28,41 @@ public class BodySlot : MonoBehaviour,IDropHandler
         {
             BodyParts bodyParts = eventData.pointerDrag.GetComponent<BodyParts>();
 
-            if(currentSlotTpe == BodySlotType.arm && bodyParts.currentType == BodyParts.BodyType.arm)
+            if(bodyParts.currentCard != currentCard)
             {
+                if (currentSlotTpe == BodySlotType.arm && bodyParts.currentType == BodyParts.BodyType.arm)
+                {
 
-                currentCard.GetBodyPart(bodyParts.damageChange, bodyParts.healthChange);
-                bodyParts.currentCard.LossBodyPart(bodyParts.damageChange, bodyParts.healthChange);
+                    currentCard.GetBodyPart(bodyParts.damageChange, bodyParts.healthChange);
+                    bodyParts.currentCard.LossBodyPart(bodyParts.damageChange, bodyParts.healthChange);
 
-                eventData.pointerDrag.transform.SetParent(this.transform);
-                eventData.pointerDrag.transform.position = transform.position;
-                bodyParts.moveBack = false;
-                bodyParts.currentHolder = this.gameObject;
+                    eventData.pointerDrag.transform.SetParent(this.transform);
+                    eventData.pointerDrag.transform.position = transform.position;
+                    bodyParts.moveBack = false;
+                    bodyParts.currentHolder = this.gameObject;
+                }
+                else if (currentSlotTpe == BodySlotType.leg && bodyParts.currentType == BodyParts.BodyType.leg)
+                {
+                    currentCard.GetBodyPart(bodyParts.damageChange, bodyParts.healthChange);
+                    bodyParts.currentCard.LossBodyPart(bodyParts.damageChange, bodyParts.healthChange);
+
+                    eventData.pointerDrag.transform.SetParent(this.transform);
+                    eventData.pointerDrag.transform.position = transform.position;
+                    bodyParts.moveBack = false;
+                    bodyParts.currentHolder = this.gameObject;
+                }
+                else if (currentSlotTpe == BodySlotType.head && bodyParts.currentType == BodyParts.BodyType.head)
+                {
+                    currentCard.GetBodyPart(bodyParts.damageChange, bodyParts.healthChange);
+                    bodyParts.currentCard.LossBodyPart(bodyParts.damageChange, bodyParts.healthChange);
+
+                    eventData.pointerDrag.transform.SetParent(this.transform);
+                    eventData.pointerDrag.transform.position = transform.position;
+                    bodyParts.moveBack = false;
+                    bodyParts.currentHolder = this.gameObject;
+                }
+
             }
-            else if(currentSlotTpe == BodySlotType.leg && bodyParts.currentType == BodyParts.BodyType.leg)
-            {
-                currentCard.GetBodyPart(bodyParts.damageChange, bodyParts.healthChange);
-                bodyParts.currentCard.LossBodyPart(bodyParts.damageChange, bodyParts.healthChange);
-
-                eventData.pointerDrag.transform.SetParent(this.transform);
-                eventData.pointerDrag.transform.position = transform.position;
-                bodyParts.moveBack = false;
-                bodyParts.currentHolder = this.gameObject;
-            }
-            else if(currentSlotTpe == BodySlotType.head && bodyParts.currentType == BodyParts.BodyType.head)
-            {
-                currentCard.GetBodyPart(bodyParts.damageChange, bodyParts.healthChange);
-                bodyParts.currentCard.LossBodyPart(bodyParts.damageChange, bodyParts.healthChange);
-
-                eventData.pointerDrag.transform.SetParent(this.transform);
-                eventData.pointerDrag.transform.position = transform.position;
-                bodyParts.moveBack = false;
-                bodyParts.currentHolder = this.gameObject;
-            }
-            
 
         }
     }
