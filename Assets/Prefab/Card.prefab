@@ -797,7 +797,7 @@ RectTransform:
   m_GameObject: {fileID: 2250755431611908012}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7563809364279885090}
   - {fileID: 960924441408233685}
@@ -812,7 +812,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 220, y: 310}
+  m_SizeDelta: {x: 205.08862, y: 289.19998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2250755431611908023
 CanvasRenderer:
@@ -1004,8 +1004,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -24.0486, y: -117.3651}
-  m_SizeDelta: {x: 128.5179, y: 34.7313}
+  m_AnchoredPosition: {x: -23.3773, y: -110.59}
+  m_SizeDelta: {x: 123.5957, y: 34.046}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &67972833796346408
 CanvasRenderer:
@@ -1062,7 +1062,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29.6
+  m_fontSize: 29.05
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1366,7 +1366,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 133.9244, y: 4.8214}
+  m_AnchoredPosition: {x: 100, y: 4.8214}
   m_SizeDelta: {x: 89.442, y: 319.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2294573609023075241
@@ -1618,7 +1618,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -19.594494, y: 34.2222}
+  m_AnchoredPosition: {x: -19.594494, y: 34.6}
   m_SizeDelta: {x: 27.0077, y: 27.3956}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9204345700721350789
@@ -1794,7 +1794,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -9.0316, y: 172.9172}
+  m_AnchoredPosition: {x: 0, y: 143}
   m_SizeDelta: {x: 201.6768, y: 115.7336}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1307469380661254574
@@ -1909,8 +1909,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00008203206, y: -184.52104}
-  m_SizeDelta: {x: 219.74, y: 49.9392}
+  m_AnchoredPosition: {x: 0.026264, y: -169.9313}
+  m_SizeDelta: {x: 205.14, y: 44.2017}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &4962600727040643226
 GameObject:
@@ -2487,7 +2487,7 @@ RectTransform:
   m_GameObject: {fileID: 7298748628284815641}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.91586, y: 0.91586, z: 0.91586}
   m_Children:
   - {fileID: 3256070857463535322}
   - {fileID: 7642018453610977428}
@@ -2499,7 +2499,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 8.2364}
+  m_AnchoredPosition: {x: 0.050476074, y: 8.533203}
   m_SizeDelta: {x: 0, y: -24.0662}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7305078646218917643
@@ -2611,8 +2611,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 72.2, y: -118.2}
-  m_SizeDelta: {x: 45.1126, y: 38.5172}
+  m_AnchoredPosition: {x: 67.94914, y: -110.59303}
+  m_SizeDelta: {x: 35.7159, y: 34.0425}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3471248901806152384
 CanvasRenderer:
@@ -2860,7 +2860,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -132.3389, y: 4.8213}
+  m_AnchoredPosition: {x: -100, y: 4.8213}
   m_SizeDelta: {x: 88.0539, y: 319.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3948979423416474840

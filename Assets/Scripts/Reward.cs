@@ -55,7 +55,7 @@ public class Reward : MonoBehaviour
 
     IEnumerator changeMapScene()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.8f);
         startMenu.StartGame();
     }
 }
