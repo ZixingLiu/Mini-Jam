@@ -8,6 +8,7 @@ TagManager:
   - Card
   - BodyPart
   - Music
+  - Audio
   layers:
   - Default
   - TransparentFX
