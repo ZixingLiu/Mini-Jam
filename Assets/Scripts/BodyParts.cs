@@ -7,7 +7,8 @@ using TMPro;
 
 public class BodyParts : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
-
+    AudioSource audioSource;
+    public AudioClip tearingSound;
 
     public bool canInteract = true;
 
@@ -38,7 +39,8 @@ public class BodyParts : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
+
         canvasGroup = GetComponent<CanvasGroup>();
 
         currentHolder = transform.parent.gameObject;
@@ -64,6 +66,9 @@ public class BodyParts : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
     {
         if(canInteract)
         {
+            //Tearing 
+            GetComponent<AudioSource>().clip = tearingSound;
+            GetComponent<AudioSource>().Play();
             canvasGroup.blocksRaycasts = false;
             canvasGroup.alpha = 0.6f;
 

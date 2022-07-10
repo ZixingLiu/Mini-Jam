@@ -7,6 +7,9 @@ using TMPro;
 
 public class Cards : MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragHandler
 {
+    AudioSource audioSource;
+    public AudioClip cardFlipping; 
+
     [Header("health")]
     public float maxHealth = 100, currentHealth;
     public Image healthBar;
@@ -63,6 +66,7 @@ public class Cards : MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragHandle
     {
         currentHealth = maxHealth;
         doTweenManager.dotweenType = DoTweenManager.DotweenType.moveTwoway;
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -240,7 +244,9 @@ public class Cards : MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragHandle
         {
             transform.position = new Vector3(transform.position.x, transform.position.y + 0.3f);
             endDrag = false;
-
+            //Card Flipping Effects
+            GetComponent<AudioSource>().clip = cardFlipping; 
+            GetComponent<AudioSource>().Play();
         }
     }
 
