@@ -168,8 +168,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.7752991, y: -0.15509796}
+  m_SizeDelta: {x: -7.7533, y: -7.133}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1787366930087757220
 CanvasRenderer:
@@ -226,10 +226,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 24.75
+  m_fontSizeBase: 25
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -987,7 +987,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7488055977710625778
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1341,6 +1341,7 @@ GameObject:
   - component: {fileID: 2294573609023075241}
   - component: {fileID: 57128306532274691}
   - component: {fileID: 240936655936692357}
+  - component: {fileID: 7489359206653734440}
   - component: {fileID: 6052401335052258584}
   m_Layer: 5
   m_Name: Leg holder
@@ -1433,6 +1434,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7489359206653734440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3143795924982888974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa61e75cf62a2ff4fa4b30189b053e1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changedBodySprite: {fileID: 4541321245745504943}
 --- !u!114 &6052401335052258584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1769,6 +1783,7 @@ GameObject:
   - component: {fileID: 1307469380661254574}
   - component: {fileID: 1214102834995591544}
   - component: {fileID: 3683793529206060984}
+  - component: {fileID: 2072934884792229772}
   - component: {fileID: 6874026586550507435}
   m_Layer: 5
   m_Name: Head holder
@@ -1861,6 +1876,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2072934884792229772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4686616966376050863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa61e75cf62a2ff4fa4b30189b053e1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changedBodySprite: {fileID: 7235255452589621627}
 --- !u!114 &6874026586550507435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1907,10 +1935,10 @@ RectTransform:
   m_Father: {fileID: 2250755431611908011}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.026264, y: -169.9313}
-  m_SizeDelta: {x: 205.14, y: 44.2017}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -24.7869, y: -111.57166}
+  m_SizeDelta: {x: -67.734406, y: -245.36029}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &4962600727040643226
 GameObject:
@@ -2609,10 +2637,10 @@ RectTransform:
   m_Father: {fileID: 2250755431611908011}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 67.94914, y: -110.59303}
-  m_SizeDelta: {x: 35.7159, y: 34.0425}
+  m_SizeDelta: {x: -170.2841, y: -255.9575}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3471248901806152384
 CanvasRenderer:
@@ -2669,10 +2697,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
+  m_fontSize: 22.4
   m_fontSizeBase: 30
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -2835,6 +2863,7 @@ GameObject:
   - component: {fileID: 3948979423416474840}
   - component: {fileID: 1152831564101454521}
   - component: {fileID: 1109748986767865945}
+  - component: {fileID: 5060754027613743281}
   - component: {fileID: 8493982637135171203}
   m_Layer: 5
   m_Name: Arm holder
@@ -2927,6 +2956,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5060754027613743281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8349527681006655391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa61e75cf62a2ff4fa4b30189b053e1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changedBodySprite: {fileID: 1688092994122666844}
 --- !u!114 &8493982637135171203
 MonoBehaviour:
   m_ObjectHideFlags: 0
