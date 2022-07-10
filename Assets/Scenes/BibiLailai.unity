@@ -471,7 +471,7 @@ MonoBehaviour:
     - 'Please, help us to destroy all bugs and finish the game! '
     - There's a hidden mechnic we use to weaken the bugs
     - But, It's easy to fail. When you fail, bugs are stronger
-    - 'Althought failure is inevitable, you can still use your brain to defeat them! '
+    - 'Although failure is inevitable, you can still use your brain to defeat them! '
     - 'Go player Go! '
 --- !u!1 &462314096
 GameObject:
