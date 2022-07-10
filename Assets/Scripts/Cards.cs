@@ -134,7 +134,7 @@ public class Cards : MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragHandle
     public void GetBodyPart(float damageChange,float healthChange)
     {
         damage += damageChange;
-        //maxHealth += healthChange;
+        maxHealth += healthChange;
         currentHealth += healthChange;
 
     }
