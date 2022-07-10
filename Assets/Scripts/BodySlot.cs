@@ -40,9 +40,12 @@ public class BodySlot : MonoBehaviour,IDropHandler
                     eventData.pointerDrag.transform.position = transform.position;
                     bodyParts.moveBack = false;
                     bodyParts.currentHolder = this.gameObject;
+                    bodyParts.currentCard = currentCard;
+
                 }
                 else if (currentSlotTpe == BodySlotType.leg && bodyParts.currentType == BodyParts.BodyType.leg)
                 {
+
                     currentCard.GetBodyPart(bodyParts.damageChange, bodyParts.healthChange);
                     bodyParts.currentCard.LossBodyPart(bodyParts.damageChange, bodyParts.healthChange);
 
@@ -50,9 +53,13 @@ public class BodySlot : MonoBehaviour,IDropHandler
                     eventData.pointerDrag.transform.position = transform.position;
                     bodyParts.moveBack = false;
                     bodyParts.currentHolder = this.gameObject;
+
+                    bodyParts.currentCard = currentCard;
+
                 }
                 else if (currentSlotTpe == BodySlotType.head && bodyParts.currentType == BodyParts.BodyType.head)
                 {
+
                     currentCard.GetBodyPart(bodyParts.damageChange, bodyParts.healthChange);
                     bodyParts.currentCard.LossBodyPart(bodyParts.damageChange, bodyParts.healthChange);
 
@@ -60,6 +67,9 @@ public class BodySlot : MonoBehaviour,IDropHandler
                     eventData.pointerDrag.transform.position = transform.position;
                     bodyParts.moveBack = false;
                     bodyParts.currentHolder = this.gameObject;
+
+                    bodyParts.currentCard = currentCard;
+
                 }
 
             }

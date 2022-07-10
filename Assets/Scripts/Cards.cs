@@ -88,6 +88,12 @@ public class Cards : MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragHandle
             cardsManager.cards.Remove(this);
             Destroy(gameObject, 1);
         }
+
+        if(damage <= 0)
+        {
+            damage = 0;
+        }
+        
         attackText.text = damage.ToString();
         healthText.text = currentHealth + "/" + maxHealth;
 
@@ -128,6 +134,7 @@ public class Cards : MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragHandle
     public void GetBodyPart(float damageChange,float healthChange)
     {
         damage += damageChange;
+        //maxHealth += healthChange;
         currentHealth += healthChange;
 
     }
