@@ -15,6 +15,7 @@ public class CombatManager : MonoBehaviour
 
     CardsManager cardsManager;
     StartMenu changescene;
+    GameObject Hand;
 
     GameObject[] allCards;
     GameObject[] allBodyPart;
@@ -24,7 +25,7 @@ public class CombatManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Hand = GameObject.Find("Hand");
         attackButton = GameObject.Find("Attack Button").GetComponent<Button>();
         cardsManager = FindObjectOfType<CardsManager>();
         changescene = GetComponent<StartMenu>();
@@ -57,11 +58,14 @@ public class CombatManager : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         rewardCanvas.SetActive(true);
 
-        foreach (Cards cardObject in cards)
+
+        for(int i=0;i<Hand.transform.childCount;i++)
         {
-            //Debug.Log("move card back");
-            cardObject.gameObject.transform.SetParent(cardsManager.transform);
+            Hand.transform.GetChild(0).GetComponent<Cards>().canDrag = true;
+            Hand.transform.GetChild(0).transform.SetParent(cardsManager.transform);
+
         }
+        
     }
 
     IEnumerator FailScene()

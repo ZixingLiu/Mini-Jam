@@ -23,7 +23,6 @@ public class Cards : MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragHandle
 
     public  Vector2 originTransfrom;
 
-    public Canvas canvas;
 
     public GameObject cardInSceneHolder;
 
@@ -41,33 +40,42 @@ public class Cards : MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragHandle
     {
         cardsManager = FindObjectOfType<CardsManager>();
         cardsManager.canPlace = true;
-    }
 
-    // Start is called before the first frame update
-    void Start()
-    {
+        canDrag = true;
+        canInteract = true;
+
         cardInSceneHolder = GameObject.Find("Card in Scene");
         doTweenManager = GetComponent<DoTweenManager>();
 
         canvasGroup = GetComponent<CanvasGroup>();
-        canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
 
         Hand = GameObject.Find("Hand");
         combatManager = FindObjectOfType<CombatManager>();
-        
 
+
+        
+    }
+
+
+
+    // Start is called before the first frame update
+    void Start()
+    {
         currentHealth = maxHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.A))
-        {
-            AttackCheck();
-        }
+        combatManager = FindObjectOfType<CombatManager>();
+        cardInSceneHolder = GameObject.Find("Card in Scene");
+        Hand = GameObject.Find("Hand");
+        //if (Input.GetKeyDown(KeyCode.A))
+        //{
+        //    AttackCheck();
+        //}
 
-        if(currentHealth > maxHealth)
+        if (currentHealth > maxHealth)
         {
             currentHealth = maxHealth;
         }

@@ -30,10 +30,15 @@ public class BodyParts : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
     public TextMeshProUGUI damageText;
     public TextMeshProUGUI healthText;
 
+    private void Awake()
+    {
+        cardInSceneHolder = GameObject.Find("Card in Scene");
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        cardInSceneHolder = GameObject.Find("Card in Scene");
+        
         canvasGroup = GetComponent<CanvasGroup>();
 
         currentHolder = transform.parent.gameObject;
@@ -44,6 +49,7 @@ public class BodyParts : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDra
     // Update is called once per frame
     void Update()
     {
+        cardInSceneHolder = GameObject.Find("Card in Scene");
         damageText.text = damageChange.ToString();
         healthText.text = healthChange.ToString();
 
