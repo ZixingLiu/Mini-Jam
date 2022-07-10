@@ -611,9 +611,9 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.6792453, g: 0.6792453, b: 0.6792453, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.9716981, g: 0.43543077, b: 0.43543077, a: 1}
+    m_NormalColor: {r: 1, g: 0.93577653, b: 0.7216981, a: 1}
+    m_HighlightedColor: {r: 0.9450981, g: 0.7294118, b: 0, a: 1}
+    m_PressedColor: {r: 0.73333335, g: 0.003921569, b: 0.19215688, a: 0.5686275}
     m_SelectedColor: {r: 1, g: 0.73000824, b: 0.3254717, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -962,9 +962,9 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.6792453, g: 0.6792453, b: 0.6792453, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.9716981, g: 0.43543077, b: 0.43543077, a: 1}
+    m_NormalColor: {r: 1, g: 0.93577653, b: 0.7216981, a: 1}
+    m_HighlightedColor: {r: 0.9450981, g: 0.7294118, b: 0, a: 1}
+    m_PressedColor: {r: 0.73333335, g: 0.003921569, b: 0.19215688, a: 0.5686275}
     m_SelectedColor: {r: 1, g: 0.73000824, b: 0.3254717, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -1619,9 +1619,9 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.6792453, g: 0.6792453, b: 0.6792453, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.9716981, g: 0.43543077, b: 0.43543077, a: 1}
+    m_NormalColor: {r: 1, g: 0.93577653, b: 0.7216981, a: 1}
+    m_HighlightedColor: {r: 0.9450981, g: 0.7294118, b: 0, a: 1}
+    m_PressedColor: {r: 0.73333335, g: 0.003921569, b: 0.19215688, a: 0.5686275}
     m_SelectedColor: {r: 1, g: 0.73000824, b: 0.3254717, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
