@@ -13,7 +13,13 @@ public class DialogManager : MonoBehaviour
 
     public GameObject dialogBar;
     public GameObject continueButton;
-    public GameObject triggerButton; 
+    public GameObject triggerButton;
+
+    public GameObject Connor;
+    public GameObject Demi;
+    public GameObject Qihuan;
+    public GameObject Haidai;
+    public GameObject Mina; 
     void Start()
     {
         sentences = new Queue<string>();
@@ -51,5 +57,10 @@ public class DialogManager : MonoBehaviour
         dialogBar.SetActive(true); 
         continueButton.SetActive(true);
         triggerButton.SetActive(false);
+        Connor.SetActive(true);
+        Demi.SetActive(true);
+        Qihuan.SetActive(true);
+        Mina.SetActive(true);
+        Haidai.SetActive(true); 
     }
 }
