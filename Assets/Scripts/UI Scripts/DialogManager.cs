@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro; 
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class DialogManager : MonoBehaviour
 {
@@ -19,7 +20,9 @@ public class DialogManager : MonoBehaviour
     public GameObject Demi;
     public GameObject Qihuan;
     public GameObject Haidai;
-    public GameObject Mina; 
+    public GameObject Mina;
+
+    public string MapScene; 
     void Start()
     {
         sentences = new Queue<string>();
@@ -49,7 +52,8 @@ public class DialogManager : MonoBehaviour
     }
     public void EndDialog()
     {
-        Debug.Log("End og the conversation"); 
+        Debug.Log("End og the conversation");
+        SceneManager.LoadScene(MapScene);
     }
 
     public void TurnOnDialogBar()

@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/StartScene.unity
     guid: 3e673ec02ccf9e047a42b24544034147
   - enabled: 1
+    path: Assets/Scenes/BibiLailai.unity
+    guid: 77657357948d51f4eb687e9dafa77906
+  - enabled: 1
     path: Assets/Scenes/Map.unity
     guid: 2f9b1528dc548ca4fa812d2be90589f9
   - enabled: 1

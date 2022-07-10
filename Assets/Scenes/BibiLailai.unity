@@ -1593,6 +1593,7 @@ MonoBehaviour:
   Qihuan: {fileID: 638880132}
   Haidai: {fileID: 2080008762}
   Mina: {fileID: 1092708953}
+  MapScene: Map
 --- !u!4 &1520214049
 Transform:
   m_ObjectHideFlags: 0
