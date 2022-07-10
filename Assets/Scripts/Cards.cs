@@ -143,6 +143,7 @@ public class Cards : MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragHandle
     {
         damage -= damageChange;
         maxHealth -= healthChange;
+        currentHealth -= healthChange;
 
     }
 
