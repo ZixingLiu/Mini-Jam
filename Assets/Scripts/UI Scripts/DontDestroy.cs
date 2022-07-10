@@ -19,7 +19,7 @@ public class DontDestroy : MonoBehaviour
 
         GameObject[] objs = GameObject.FindGameObjectsWithTag("Music");
 
-        if (objs.Length > 1 || scene.name == "Level 1")
+        if (objs.Length > 1 || scene.name == "Level 1" || scene.name == "Test1")
         {
             Destroy(this.gameObject);
         }
@@ -33,7 +33,7 @@ public class DontDestroy : MonoBehaviour
         //Debug.Log(scene.name);
         GameObject[] objs = GameObject.FindGameObjectsWithTag("Music");
 
-        if (objs.Length > 1 || scene.name == "Level 1")
+        if (objs.Length > 1 || scene.name == "Level 1" || scene.name == "Test1")
         {
             Destroy(this.gameObject);
         }
