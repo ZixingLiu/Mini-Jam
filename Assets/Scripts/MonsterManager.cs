@@ -15,7 +15,7 @@ public class MonsterManager : MonoBehaviour
         MonsterHolder = GameObject.Find("Monster Slot Holder");
         combatManager = FindObjectOfType<CombatManager>();
 
-        PutMonsterInSlot();
+        
     }
 
     // Update is called once per frame

@@ -9,6 +9,7 @@ TagManager:
   - BodyPart
   - Music
   - Audio
+  - QTE
   layers:
   - Default
   - TransparentFX

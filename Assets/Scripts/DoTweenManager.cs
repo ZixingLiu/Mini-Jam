@@ -13,9 +13,9 @@ public class DoTweenManager : MonoBehaviour
 
     public enum DotweenType
     {
-        moveOneway,moveTwoway
+        moveOneway,moveTwoway, moveBackAndForth
     }
-    public DotweenType dotweenYpe = DotweenType.moveOneway;
+    public DotweenType dotweenType = DotweenType.moveOneway;
 
     private void Update()
     {
@@ -27,7 +27,7 @@ public class DoTweenManager : MonoBehaviour
 
     public void PlayAnimatetion()
     {
-        if (dotweenYpe == DotweenType.moveOneway)
+        if (dotweenType == DotweenType.moveOneway)
         {
             if (targetPos == Vector3.zero)
             {
@@ -36,7 +36,7 @@ public class DoTweenManager : MonoBehaviour
 
             this.transform.DOMove(targetPos, duration).SetEase(moveEase);
         }
-        else if (dotweenYpe == DotweenType.moveTwoway)
+        else if (dotweenType == DotweenType.moveTwoway)
         {
             if (targetPos == Vector3.zero)
             {
@@ -44,6 +44,14 @@ public class DoTweenManager : MonoBehaviour
             }
 
             StartCoroutine(moveWithBothWay());
+        }
+        else if(dotweenType == DotweenType.moveBackAndForth)
+        {
+            if (targetPos == Vector3.zero)
+            {
+                targetPos = this.transform.position;
+            }
+            StartCoroutine(moveBackAndForth());
         }
     }
 
@@ -58,5 +66,18 @@ public class DoTweenManager : MonoBehaviour
         this.transform.DOMove(orginalPos,duration).SetEase(moveEase);
     }
 
-    
+    private IEnumerator moveBackAndForth()
+    {
+        while(true)
+        {
+            Vector3 orginalPos = this.transform.position;
+            this.transform.DOMove(targetPos, duration).SetEase(moveEase);
+            yield return new WaitForSeconds(duration);
+            this.transform.DOMove(orginalPos, duration).SetEase(moveEase);
+            yield return new WaitForSeconds(duration);
+
+        }
+
+    }
+
 }

@@ -22,6 +22,8 @@ public class CombatManager : MonoBehaviour
 
     public GameObject rewardCanvas;
 
+    PlayerQTE PlayerQTE;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,17 +31,19 @@ public class CombatManager : MonoBehaviour
         attackButton = GameObject.Find("Attack Button").GetComponent<Button>();
         cardsManager = FindObjectOfType<CardsManager>();
         changescene = GetComponent<StartMenu>();
+        PlayerQTE = FindObjectOfType<PlayerQTE>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(monsters.Count <= 0)
+        if(monsters.Count <= 0 && PlayerQTE.finishGame)
         {
-           // Debug.Log("win fight");
+            //Debug.Log("win fight");
 
             StartCoroutine(OpenReward());
         }
+        
 
         if (cardsManager.cards.Count <= 0)
         {
