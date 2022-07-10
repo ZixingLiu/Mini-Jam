@@ -244,7 +244,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &359866420
 RectTransform:
   m_ObjectHideFlags: 0
@@ -389,6 +389,18 @@ MonoBehaviour:
       - m_Target: {fileID: 435777838}
         m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
         m_MethodName: TriggerDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1520214048}
+        m_TargetAssemblyTypeName: DialogManager, Assembly-CSharp
+        m_MethodName: TurnOnDialogBar
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -676,7 +688,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: NPC Name
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 07b2c918bb8a61f47a226b37a678b3f0, type: 2}
   m_sharedMaterial: {fileID: -5679187146130483875, guid: 07b2c918bb8a61f47a226b37a678b3f0, type: 2}
@@ -1173,7 +1185,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1431235804
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1320,6 +1332,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 771914953}
   dialogText: {fileID: 1958542656}
+  dialogBar: {fileID: 359866419}
+  continueButton: {fileID: 1431235803}
+  triggerButton: {fileID: 435777833}
 --- !u!4 &1520214049
 Transform:
   m_ObjectHideFlags: 0
@@ -1391,7 +1406,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Content Here! '
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 07b2c918bb8a61f47a226b37a678b3f0, type: 2}
   m_sharedMaterial: {fileID: -5679187146130483875, guid: 07b2c918bb8a61f47a226b37a678b3f0, type: 2}

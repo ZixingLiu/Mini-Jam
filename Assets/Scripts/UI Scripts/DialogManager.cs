@@ -9,7 +9,11 @@ public class DialogManager : MonoBehaviour
     private Queue<string> sentences;
 
     public TextMeshProUGUI nameText;
-    public TextMeshProUGUI dialogText; 
+    public TextMeshProUGUI dialogText;
+
+    public GameObject dialogBar;
+    public GameObject continueButton;
+    public GameObject triggerButton; 
     void Start()
     {
         sentences = new Queue<string>();
@@ -37,8 +41,15 @@ public class DialogManager : MonoBehaviour
         string sentence = sentences.Dequeue();
         dialogText.text = sentence; 
     }
-    void EndDialog()
+    public void EndDialog()
     {
         Debug.Log("End og the conversation"); 
+    }
+
+    public void TurnOnDialogBar()
+    {
+        dialogBar.SetActive(true); 
+        continueButton.SetActive(true);
+        triggerButton.SetActive(false);
     }
 }
