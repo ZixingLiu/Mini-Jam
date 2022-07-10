@@ -6,7 +6,8 @@ public class ButtonSoundEffect : MonoBehaviour
 {
     AudioSource audioSource;
 
-    public AudioClip buttonSound; 
+    public AudioClip buttonSound;
+    public AudioClip bugSound; 
 
     void Start()
     {
@@ -16,6 +17,11 @@ public class ButtonSoundEffect : MonoBehaviour
     public void SoundPlay()
     {
         GetComponent<AudioSource>().clip = buttonSound;
+        GetComponent<AudioSource>().Play();
+    }
+    public void BugSoundPlay()
+    {
+        GetComponent<AudioSource>().clip = bugSound;
         GetComponent<AudioSource>().Play();
     }
 }
