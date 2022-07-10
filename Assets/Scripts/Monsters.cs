@@ -28,6 +28,8 @@ public class Monsters : MonoBehaviour
         doTweenManager = GetComponent<DoTweenManager>();
         combatManager = FindObjectOfType<CombatManager>();
         currentHealth = maxHealth;
+
+        doTweenManager.dotweenType = DoTweenManager.DotweenType.moveTwoway;
     }
 
     // Update is called once per frame

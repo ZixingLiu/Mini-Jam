@@ -62,6 +62,7 @@ public class Cards : MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragHandle
     void Start()
     {
         currentHealth = maxHealth;
+        doTweenManager.dotweenType = DoTweenManager.DotweenType.moveTwoway;
     }
 
     // Update is called once per frame
