@@ -3628,7 +3628,7 @@ GameObject:
   - component: {fileID: 8759691245426332685}
   - component: {fileID: 3466882492314656378}
   - component: {fileID: 176511685564944397}
-  - component: {fileID: 760942946290000931}
+  - component: {fileID: -2950499075055136624}
   m_Layer: 5
   m_Name: NPC2 Card
   m_TagString: Card
@@ -3820,7 +3820,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!82 &760942946290000931
+--- !u!82 &-2950499075055136624
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3832,7 +3832,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7c5530d724290d749b937d1289c68030, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.145
+  m_Volume: 0.121
   m_Pitch: 1
   Loop: 0
   Mute: 0

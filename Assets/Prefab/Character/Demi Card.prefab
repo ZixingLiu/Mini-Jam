@@ -2088,7 +2088,7 @@ GameObject:
   - component: {fileID: 4231325516418067097}
   - component: {fileID: 8301483934340276462}
   - component: {fileID: 4709362872307986073}
-  - component: {fileID: 5307339837314767543}
+  - component: {fileID: 1022509762592681547}
   m_Layer: 5
   m_Name: Demi Card
   m_TagString: Card
@@ -2280,7 +2280,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!82 &5307339837314767543
+--- !u!82 &1022509762592681547
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2292,7 +2292,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7c5530d724290d749b937d1289c68030, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.145
+  m_Volume: 0.121
   m_Pitch: 1
   Loop: 0
   Mute: 0
