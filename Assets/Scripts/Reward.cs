@@ -10,11 +10,14 @@ public class Reward : MonoBehaviour
     StartMenu startMenu;
 
     public GameObject[] newCard;
+    GameObject Hand;
 
     // Start is called before the first frame update
     void Start()
     {
         startMenu = GetComponent<StartMenu>();
+        Hand = GameObject.Find("Hand");
+
     }
 
     private void Awake()
@@ -36,20 +39,31 @@ public class Reward : MonoBehaviour
         {
             cards.damage += 1;
         }
-        startMenu.StartGame();
+
+        for (int i = 0; i < Hand.transform.childCount; i++)
+        {
+            Hand.transform.GetChild(0).GetComponent<Cards>().canDrag = true;
+            Hand.transform.GetChild(0).transform.SetParent(cardsManager.transform);
+
+        }
 
         StartCoroutine(changeMapScene());
     }
 
     public void AddHealth()
     {
-        Debug.Log("add damage");
+        Debug.Log("add health");
 
         foreach (Cards cards in cardsManager.cards)
         {
             cards.currentHealth += 1;
         }
-        startMenu.StartGame();
+        for (int i = 0; i < Hand.transform.childCount; i++)
+        {
+            Hand.transform.GetChild(0).GetComponent<Cards>().canDrag = true;
+            Hand.transform.GetChild(0).transform.SetParent(cardsManager.transform);
+
+        }
 
         StartCoroutine(changeMapScene());
     }

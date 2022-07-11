@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -26,6 +26,7 @@ public class CombatManager : MonoBehaviour
 
     PlayerQTE PlayerQTE;
     Scene scene;
+    GameObject playerSlotHolder;
 
     private void Awake()
     {
@@ -40,6 +41,7 @@ public class CombatManager : MonoBehaviour
         cardsManager = FindObjectOfType<CardsManager>();
         changescene = GetComponent<StartMenu>();
         PlayerQTE = FindObjectOfType<PlayerQTE>();
+        playerSlotHolder = GameObject.Find("Player Slot Holder");
     }
 
     // Update is called once per frame
@@ -85,8 +87,19 @@ public class CombatManager : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         rewardCanvas.SetActive(true);
 
+     
 
-        for(int i=0;i<Hand.transform.childCount;i++)
+        for (int j = 0; j < playerSlotHolder.transform.childCount; j++)
+        {
+            if(playerSlotHolder.transform.GetChild(j).childCount>=1)
+            {
+                playerSlotHolder.transform.GetChild(j).GetChild(0).GetComponent<Cards>().canDrag = true;
+                playerSlotHolder.transform.GetChild(j).GetChild(0).transform.SetParent(cardsManager.transform);
+            }
+            
+        }
+
+            for (int i=0;i<Hand.transform.childCount;i++)
         {
             Hand.transform.GetChild(0).GetComponent<Cards>().canDrag = true;
             Hand.transform.GetChild(0).transform.SetParent(cardsManager.transform);
