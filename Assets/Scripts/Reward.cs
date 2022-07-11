@@ -37,6 +37,8 @@ public class Reward : MonoBehaviour
             cards.damage += 1;
         }
         startMenu.StartGame();
+
+        StartCoroutine(changeMapScene());
     }
 
     public void AddHealth()
@@ -48,6 +50,8 @@ public class Reward : MonoBehaviour
             cards.currentHealth += 1;
         }
         startMenu.StartGame();
+
+        StartCoroutine(changeMapScene());
     }
 
     public void GetNewCard(int num)

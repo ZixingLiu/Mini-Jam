@@ -24,7 +24,7 @@ public class LevelManager : MonoBehaviour
 
     private void Update()
     {
-        if (UnlockedLevel == 4)
+        if (UnlockedLevel == 5)
         {
             UnlockedLevel = 1;
 

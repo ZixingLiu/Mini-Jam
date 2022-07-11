@@ -17,5 +17,10 @@ public class FailSceneManager : MonoBehaviour
     {
         SceneManager.LoadScene(MapScene);
     }
+    public void QuitGame()
+    {
+        Debug.Log("Quit Game"); 
+        Application.Quit(); 
+    }
     
 }

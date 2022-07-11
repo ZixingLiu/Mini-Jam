@@ -23,7 +23,7 @@ public class StartMenu : MonoBehaviour
     {
         if (levelManager != null)
         {
-            if (levelManager.UnlockedLevel == 4)
+            if (levelManager.UnlockedLevel == 5)
             {
                 levelManager.UnlockedLevel = 1;
 
