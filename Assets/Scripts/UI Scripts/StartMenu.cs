@@ -10,16 +10,21 @@ public class StartMenu : MonoBehaviour
     public string LoadLevel3;
     public string LoadLevel4;
     public string EndingScene; 
+
+    LevelManager levelManager;
     // Start is called before the first frame update
     void Start()
     {
-        
+        levelManager = FindObjectOfType<LevelManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (levelManager.UnlockedLevel == 4)
+        {
+            levelManager.UnlockedLevel = 0;
+        }
     }
     public void StartGame()
     {
@@ -28,6 +33,7 @@ public class StartMenu : MonoBehaviour
     public void StartLevelOne()
     {
         SceneManager.LoadScene(LoadSceneName);
+        levelManager.UnlockedLevel++;
     }
 
     public void Test()
@@ -37,14 +43,20 @@ public class StartMenu : MonoBehaviour
     public void LoadLevelTwo()
     {
         SceneManager.LoadScene(LoadLevel2);
+        levelManager.UnlockedLevel++;
+
     }
     public void LoadLevelThree()
     {
         SceneManager.LoadScene(LoadLevel3);
+        levelManager.UnlockedLevel++;
+
     }
     public void LoadLevelFour()
     {
         SceneManager.LoadScene(LoadLevel4);
+        levelManager.UnlockedLevel++;
+
     }
     public void QuitGame()
     {
