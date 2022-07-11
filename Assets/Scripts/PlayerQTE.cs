@@ -17,6 +17,7 @@ public class PlayerQTE : MonoBehaviour
     public GameObject AddedMonsterCard;
 
     MonsterManager monsterManager;
+    CardsManager cardsManager;
 
     public bool finishGame = false;
 
@@ -28,6 +29,7 @@ public class PlayerQTE : MonoBehaviour
         doTweenManager.PlayAnimatetion();
 
         monsterManager = FindObjectOfType<MonsterManager>();
+        cardsManager = FindObjectOfType<CardsManager>();
     }
 
     // Start is called before the first frame update
@@ -41,30 +43,49 @@ public class PlayerQTE : MonoBehaviour
     {
         if(bugs.Count <=0)
         {
-            finishGame = true;
-            miniGameCanvas.SetActive(false);
-            monsterManager.PutMonsterInSlot();
+            Success();
 
         }
 
         if(Input.GetKeyDown(KeyCode.S))
         {
-            finishGame = true;
-            miniGameCanvas.SetActive(false);
-            monsterManager.PutMonsterInSlot();
+            Success();
         }
 
         if(Input.GetKeyDown(KeyCode.F))
         {
-            miniGameCanvas.SetActive(false);
-            //monster
+            Fail();
+        }
+    }
 
-            finishGame = true;
+    public void Fail()
+    {
+        miniGameCanvas.SetActive(false);
+        //monster
 
-            AddedMonsterCard.transform.SetParent(monsterManager.transform);
-            AddedMonsterCard.SetActive(true);
-            monsterManager.Monster.Add(AddedMonsterCard);
-            monsterManager.PutMonsterInSlot();
+        finishGame = true;
+
+        AddedMonsterCard.transform.SetParent(monsterManager.transform);
+        AddedMonsterCard.SetActive(true);
+        monsterManager.Monster.Add(AddedMonsterCard);
+        monsterManager.PutMonsterInSlot();
+
+        foreach(Cards card in cardsManager.cards)
+        {
+            card.canPlaySound = true;
+        }
+
+    }
+
+    public void Success()
+    {
+        finishGame = true;
+        miniGameCanvas.SetActive(false);
+        monsterManager.PutMonsterInSlot();
+
+        foreach (Cards card in cardsManager.cards)
+        {
+            card.canPlaySound = true;
         }
     }
 
@@ -78,15 +99,7 @@ public class PlayerQTE : MonoBehaviour
         }
         else
         {
-            miniGameCanvas.SetActive(false);
-            //monster
-
-            finishGame = true;
-
-            AddedMonsterCard.transform.SetParent(monsterManager.transform);
-            AddedMonsterCard.SetActive(true);
-            monsterManager.Monster.Add(AddedMonsterCard);
-            monsterManager.PutMonsterInSlot();
+            Fail();
         }
        
     }

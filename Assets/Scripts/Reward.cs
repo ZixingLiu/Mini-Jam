@@ -39,6 +39,17 @@ public class Reward : MonoBehaviour
         startMenu.StartGame();
     }
 
+    public void AddHealth()
+    {
+        Debug.Log("add damage");
+
+        foreach (Cards cards in cardsManager.cards)
+        {
+            cards.currentHealth += 1;
+        }
+        startMenu.StartGame();
+    }
+
     public void GetNewCard(int num)
     {
         if(newCard[num] != null)

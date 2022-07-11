@@ -38,6 +38,7 @@ public class Cards : MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragHandle
     CardsManager cardsManager;
 
     public bool canInteract = true;
+    public bool canPlaySound = false;
 
     private void Awake()
     {
@@ -244,9 +245,14 @@ public class Cards : MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragHandle
         {
             transform.position = new Vector3(transform.position.x, transform.position.y + 0.3f);
             endDrag = false;
-            //Card Flipping Effects
-            GetComponent<AudioSource>().clip = cardFlipping; 
-            GetComponent<AudioSource>().Play();
+
+            if(canPlaySound)
+            {
+                //Card Flipping Effects
+                GetComponent<AudioSource>().clip = cardFlipping;
+                GetComponent<AudioSource>().Play();
+            }
+            
         }
     }
 
