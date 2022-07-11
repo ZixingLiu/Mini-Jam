@@ -22,6 +22,15 @@ public class LevelManager : MonoBehaviour
             Buttons[i].interactable = true;
     }
 
+    private void Update()
+    {
+        if (UnlockedLevel == 4)
+        {
+            UnlockedLevel = 1;
+
+        }
+    }
+
     public void LoadLevel(int LevelIndex)
     {
         SceneManager.LoadScene(LevelIndex);
@@ -30,5 +39,10 @@ public class LevelManager : MonoBehaviour
     public void Hook()
     {
         Destroy(GameObject.Find("Hook"));
+    }
+
+    private void OnDestroy()
+    {
+        PlayerPrefs.SetInt("UnlockedLevel", UnlockedLevel);
     }
 }

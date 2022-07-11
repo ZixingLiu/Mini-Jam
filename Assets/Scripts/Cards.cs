@@ -73,6 +73,12 @@ public class Cards : MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragHandle
     // Update is called once per frame
     void Update()
     {
+
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            damage += 100;
+        }
+
         combatManager = FindObjectOfType<CombatManager>();
         cardInSceneHolder = GameObject.Find("Card in Scene");
         Hand = GameObject.Find("Hand");
