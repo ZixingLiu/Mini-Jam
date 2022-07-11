@@ -462,15 +462,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialog:
-    name: Failed Game Dev Team
+    name: Failed Game Development Team
     sentences:
     - 'Uhhh... Finally we are out! '
     - 'Hey there, um, player. '
-    - Believe it or not, we are the game dev team for this game
-    - Long story short, we are trapped by dangerous bugs
-    - They are too strong to defeat by ourselves
+    - Believe it or not, we are the game dev team for this game.
+    - Long story short, we are trapped by dangerous bugs.
+    - They are too strong to defeat by ourselves.
     - 'Please, help us to destroy all bugs and finish the game! '
-    - There's a hidden mechnic we use to weaken the bugs
+    - There's a hidden mechanic we use to weaken the bugs.
     - But, It's easy to fail. When you fail, bugs are stronger
     - 'Although failure is inevitable, you can still use your brain to defeat them! '
     - 'Go player Go! '
@@ -809,8 +809,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 07b2c918bb8a61f47a226b37a678b3f0, type: 2}
-  m_sharedMaterial: {fileID: -5679187146130483875, guid: 07b2c918bb8a61f47a226b37a678b3f0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -834,13 +834,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 85
-  m_fontSizeBase: 85
+  m_fontSize: 75
+  m_fontSizeBase: 75
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 4
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -870,7 +870,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -409.91544, y: 0, z: 0, w: 0}
+  m_margin: {x: -1157.307, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1707,7 +1707,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -309.77, y: -272.24}
+  m_AnchoredPosition: {x: -309.77, y: -247}
   m_SizeDelta: {x: 283.97, y: 70.48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1958542656
@@ -1732,8 +1732,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 07b2c918bb8a61f47a226b37a678b3f0, type: 2}
-  m_sharedMaterial: {fileID: -5679187146130483875, guid: 07b2c918bb8a61f47a226b37a678b3f0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1763,7 +1763,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -2122,8 +2122,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2080008762}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.83, y: 1.57, z: 0}
-  m_LocalScale: {x: 0.23409, y: 0.23409, z: 0.23409}
+  m_LocalPosition: {x: -3.67, y: 1.6, z: 0}
+  m_LocalScale: {x: 1.9559815, y: 1.9559815, z: 1.9559815}
   m_Children: []
   m_Father: {fileID: 1589557265}
   m_RootOrder: 1
@@ -2168,14 +2168,14 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: e5e448f98293f6440bd883f67b912bb9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6e0d0274f3a2eaa448622c988798d963, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 15.31, y: 19.24}
+  m_Size: {x: 2.348, y: 2.588}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0

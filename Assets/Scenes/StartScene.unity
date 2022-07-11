@@ -899,6 +899,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonSound: {fileID: 8300000, guid: 852e045ede08b7e418b3c107fa52a0fd, type: 3}
+  bugSound: {fileID: 0}
 --- !u!4 &1207011354
 Transform:
   m_ObjectHideFlags: 0
@@ -1006,7 +1007,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0.8196079, g: 0.3921569, b: 0.3254902, a: 1}
     m_HighlightedColor: {r: 0.43789604, g: 0.6886792, b: 0.60508484, a: 1}
     m_PressedColor: {r: 0.25546458, g: 0.4339623, b: 0.42854705, a: 1}
-    m_SelectedColor: {r: 0.25490198, g: 0.43529415, b: 0.427451, a: 0.64705884}
+    m_SelectedColor: {r: 0.8196079, g: 0.3921569, b: 0.3254902, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1028,7 +1029,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 45675113}
         m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: StartGame
+        m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1242,7 +1243,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0.8196079, g: 0.3921569, b: 0.3254902, a: 1}
     m_HighlightedColor: {r: 0.43789604, g: 0.6886792, b: 0.60508484, a: 1}
     m_PressedColor: {r: 0.25546458, g: 0.4339623, b: 0.42854705, a: 1}
-    m_SelectedColor: {r: 0.25490198, g: 0.43529415, b: 0.427451, a: 0.64705884}
+    m_SelectedColor: {r: 0.8196079, g: 0.3921569, b: 0.3254902, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1

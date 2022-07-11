@@ -152,10 +152,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ba3d89fe4b21c74f9cef2d6679bd3d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LoadSceneName: L1
-  LoadLevel2: L2
-  LoadLevel3: L3
-  LoadLevel4: L4
+  LoadSceneName: Level1
+  LoadLevel2: Level2
+  LoadLevel3: Level3
+  LoadLevel4: Level4
   EndingScene: 
 --- !u!4 &18105089
 Transform:

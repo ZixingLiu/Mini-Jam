@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class CombatManager : MonoBehaviour
 {
@@ -23,6 +25,12 @@ public class CombatManager : MonoBehaviour
     public GameObject rewardCanvas;
 
     PlayerQTE PlayerQTE;
+    Scene scene;
+
+    private void Awake()
+    {
+        scene = SceneManager.GetActiveScene();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +49,15 @@ public class CombatManager : MonoBehaviour
         {
             //Debug.Log("win fight");
 
-            StartCoroutine(OpenReward());
+            if(scene.name == "Level4")
+            {
+                StartCoroutine(Win());
+            }
+            else
+            {
+                StartCoroutine(OpenReward());
+            }
+
         }
         
 
@@ -53,6 +69,13 @@ public class CombatManager : MonoBehaviour
 
         allCards = GameObject.FindGameObjectsWithTag("Card");
         allBodyPart = GameObject.FindGameObjectsWithTag("BodyPart");
+    }
+
+    IEnumerator Win()
+    {
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene("Win");
+
     }
 
 
