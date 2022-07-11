@@ -21,15 +21,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Fail.unity
     guid: 461758e63181d2d42af424254fe5a0b6
   - enabled: 1
-    path: Assets/Scenes/L1.unity
-    guid: 5ba347870290cdc4ba4bf4276ea7af49
+    path: Assets/Scenes/Level2.unity
+    guid: e56e7a57182a6e74f951eef321b43008
   - enabled: 1
-    path: Assets/Scenes/L2.unity
-    guid: 49ea956ba6546b94f9058bc4d3c5ccb5
+    path: Assets/Scenes/Level3.unity
+    guid: f588b57f8fa29d240b7033ec86e9d0e3
   - enabled: 1
-    path: Assets/Scenes/L3.unity
-    guid: a6a2eb8979ca22844bf33eedfcfd4662
+    path: Assets/Scenes/Level4.unity
+    guid: 756525fe233f2134793fef5718af561d
   - enabled: 1
-    path: Assets/Scenes/L4.unity
-    guid: ca186bc7fa324574ebd4ce4b30023f1b
+    path: Assets/Scenes/Win.unity
+    guid: f15962021eb0cd343ae5ea2874c77553
   m_configObjects: {}
